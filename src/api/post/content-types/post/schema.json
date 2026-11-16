@@ -15,9 +15,41 @@
       "type": "string",
       "required": true
     },
+    "Slug": {
+      "type": "string",
+      "required": true
+    },
     "Content": {
       "type": "richtext",
       "required": true
+    },
+    "ShowHome": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "Thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "Type": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "new",
+        "feature"
+      ]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "posts"
     }
   }
 }
