@@ -50,6 +50,16 @@
       "relation": "manyToOne",
       "target": "api::category.category",
       "inversedBy": "posts"
+    },
+    "SeoSettings": {
+      "type": "component",
+      "component": "seo.seo",
+      "repeatable": false
+    },
+    "ReviewList": {
+      "type": "component",
+      "component": "reviews.reviews",
+      "repeatable": true
     }
   }
 }

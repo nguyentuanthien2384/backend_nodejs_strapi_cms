@@ -1,5 +1,41 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface CategoryCategory extends Struct.ComponentSchema {
+  collectionName: 'components_category_categories';
+  info: {
+    displayName: 'Category';
+    icon: 'check';
+  };
+  attributes: {
+    category: Schema.Attribute.Relation<'oneToOne', 'api::article.article'>;
+    Title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ReviewsReviews extends Struct.ComponentSchema {
+  collectionName: 'components_reviews_reviews';
+  info: {
+    displayName: 'Reviews';
+    icon: 'check';
+  };
+  attributes: {
+    Content: Schema.Attribute.Text & Schema.Attribute.Required;
+    Name: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SeoSeo extends Struct.ComponentSchema {
+  collectionName: 'components_seo_seos';
+  info: {
+    displayName: 'SEO';
+    icon: 'heart';
+  };
+  attributes: {
+    SeoDescription: Schema.Attribute.String;
+    SeoTitle: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -65,6 +101,9 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export namespace Public {
     export interface ComponentSchemas {
+      'category.category': CategoryCategory;
+      'reviews.reviews': ReviewsReviews;
+      'seo.seo': SeoSeo;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

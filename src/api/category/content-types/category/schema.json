@@ -26,6 +26,11 @@
       "relation": "oneToMany",
       "target": "api::post.post",
       "mappedBy": "category"
+    },
+    "SeoSettings": {
+      "type": "component",
+      "component": "seo.seo",
+      "repeatable": false
     }
   }
 }
