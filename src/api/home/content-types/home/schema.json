@@ -16,6 +16,14 @@
     },
     "Description": {
       "type": "text"
+    },
+    "Builder": {
+      "type": "dynamiczone",
+      "components": [
+        "reviews.reviews",
+        "category.category",
+        "title.title"
+      ]
     }
   }
 }

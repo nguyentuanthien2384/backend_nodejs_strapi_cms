@@ -7,8 +7,7 @@ export interface CategoryCategory extends Struct.ComponentSchema {
     icon: 'check';
   };
   attributes: {
-    category: Schema.Attribute.Relation<'oneToOne', 'api::article.article'>;
-    Title: Schema.Attribute.String & Schema.Attribute.Required;
+    category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
   };
 }
 
@@ -98,6 +97,17 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface TitleTitle extends Struct.ComponentSchema {
+  collectionName: 'components_title_titles';
+  info: {
+    displayName: 'Title';
+    icon: 'brush';
+  };
+  attributes: {
+    Title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export namespace Public {
     export interface ComponentSchemas {
@@ -109,6 +119,7 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'title.title': TitleTitle;
     }
   }
 }
